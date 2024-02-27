@@ -1,0 +1,83 @@
+﻿<Window x:Class="Mini_Uber.Searching"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mini_Uber"
+        mc:Ignorable="d"
+        Title="Searching" Height="800" Width="650" WindowStartupLocation="CenterScreen" Background="White"  >
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Border Name="ride_border" 
+                Grid.Row="0"
+                BorderThickness="0"
+                CornerRadius="20"
+                BorderBrush="#FFD9E2F4" 
+                Background="#0536FF"
+              Margin="0,-15,0,0" >
+
+            <Label Name="select_destination_lb"
+                   Content="Searching For a Driver " 
+                   FontFamily="Nirmala UI"
+                   FontSize="45" 
+                   FontWeight="Bold"
+                     Margin="0,0,0,0" 
+                    Height="auto"
+                       Width="514"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+        </Border>
+        <StackPanel Grid.Row="1" Grid.RowSpan="2">
+            <MediaElement Name="myGif"  LoadedBehavior="Play" Width="450" Height="350" UnloadedBehavior="Manual" MediaEnded="MediaElement_MediaEnded" Source="E:\Mini uber\Mini_Uber\Resources\car.gif"  Margin="0,0,0,0"/>
+
+            <Button Name="cancel_btn"
+                
+                Width="250"
+                Height="40"
+                FontFamily="Nirmala UI"
+                Margin="0,60,0,0"
+                Cursor="Hand"
+                BorderBrush="Blue"
+                Content="Cancel" 
+                Grid.Row="1"      
+                >
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0536FF"/>
+                                <Setter Property="Foreground" Value="white"/>
+                                <Setter Property="FontSize" Value="16" />
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" Value="#2662FF"/>
+                                <Setter Property="Foreground" Value="white"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>

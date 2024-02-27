@@ -1,0 +1,141 @@
+﻿<Window x:Class="Mini_Uber.DriverDetailes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mini_Uber"
+        mc:Ignorable="d"
+        Title="DriverDetailes" Height="800" Width="650" WindowStartupLocation="CenterScreen" Background="#FFD9E2F4"  >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Border Name="ride_border" 
+                Grid.Row="1"
+                BorderThickness="0"
+                CornerRadius="20"
+                BorderBrush="#FFD9E2F4" 
+                Background="#0536FF"
+              Margin="0,-15,0,0" >
+            <StackPanel >
+                <Label Name="driver_info_lb"
+                   Content="Driver Info : " 
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                   FontWeight="Bold"
+                     Margin="0,0,300,0" 
+                       Width="300"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+                <Label Name="Name_lb"
+                   Content="Name :" 
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                   FontWeight="Bold"
+                     Margin="0,20,480,0" 
+                       Width="110"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+                <Label Name="driver_name_lb"
+                   Content=" Mohamed samy" 
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                     Margin="0,-46,50,0" 
+                       Width="300"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+                <Label Name="rtpe_lb"
+                   Content="Car Type :" 
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                   FontWeight="Bold"
+                     Margin="0,20,440,0" 
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+                <Label Name="car_type_lb"
+                   Content="BMW"  
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                  
+                     Margin="0,-46,-20,0" 
+                       Width="300"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+                <Label Name="plate_lb"
+                   Content="Plate :" 
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                   FontWeight="Bold"
+                     Margin="0,20,480,0" 
+                       Width="110"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+                <Label Name="plate_number_lb"
+                   Content=" 1 2 2 و ق م" 
+                   FontFamily="Arial"
+                   FontSize="30"
+                     Margin="0,-46,50,0" 
+                       Width="300"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+
+                <Button Name="checkout_btn"
+                
+                Width="250"
+                Height="40"
+                FontFamily="Nirmala UI"
+                Margin="0,60,0,0"
+                Cursor="Hand"
+                BorderBrush="Blue"
+                Content="Checkout" 
+                >
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#0536FF"/>
+                                    <Setter Property="Foreground" Value="white"/>
+                                    <Setter Property="FontSize" Value="16" />
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Background" Value="#2662FF"/>
+                                    <Setter Property="Foreground" Value="white"/>
+                                    <Setter Property="FontSize" Value="16"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</Window>

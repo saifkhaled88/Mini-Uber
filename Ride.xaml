@@ -1,0 +1,309 @@
+﻿<Window x:Class="Mini_Uber.Ride"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mini_Uber"
+        mc:Ignorable="d"
+        Title="Ride" Height="800" Width="650" WindowStartupLocation="CenterScreen" Background="#FFD9E2F4"  >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Name="ride_border" 
+                Grid.Row="0"
+                BorderThickness="0"
+                CornerRadius="20"
+                BorderBrush="#FFD9E2F4" 
+                Background="#0536FF"
+              Margin="0,-15,0,0" >
+
+            <Label Name="select_destination_lb"
+                   Content="Select Your Ride Type " 
+                   FontFamily="Nirmala UI"
+                   FontSize="45" 
+                   FontWeight="Bold"
+                     Margin="0,0,0,0" 
+                    Height="auto"
+                       Width="514"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="White"/>
+
+        </Border>
+
+
+        <Border Name="premium_border" 
+                Grid.Row="1"
+                
+                CornerRadius="5"
+                Background="White"
+                Margin="0,0,0,2" 
+                Width="635"  Cursor="Hand">
+
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <StackPanel x:Name="premium_st" Grid.Row="1"  >
+
+
+                
+                
+
+                <Image x:Name="comfort_img" Source="Resources/comfort1.png" Stretch="UniformToFill" Width="200" Height="110"/>
+                <Label Name="premium_lb"
+                   Content="Comfort " 
+                   FontFamily="Nirmala UI"
+                   FontSize="20" 
+                   FontWeight="Bold"
+                     Margin="0,-40,450,0" 
+                    Height="auto"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+                <Label Name="premium_caption_lb"
+                   Content="Newer cars with extra legroom " 
+                   FontFamily="Nirmala UI"
+                   FontSize="15" 
+                   FontWeight="Normal"
+                     Margin="0,-5,250,0" 
+                    Height="auto"
+                       Width="350"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+
+                <Label Name="comfort_price_lb"
+                   Content="EGP 56.34" 
+                   FontFamily="Nirmala UI"
+                   FontSize="15" 
+                   FontWeight="Heavy"
+                     Margin="500,-50,0,0" 
+                    Height="auto"
+                       Width="100"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+
+
+
+            </StackPanel>
+
+        
+
+        </Border>
+
+        <Border Name="basic_border" 
+                Grid.Row="2"
+                CornerRadius="5"
+                 Cursor="Hand"
+                Background="White"
+              Margin="0,0,0,2"  Width="635" MouseLeftButtonDown="Premium_border_MouseLeftButtonDown">
+
+
+
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <StackPanel x:Name="basic_st" Grid.Row="2" >
+
+                <Image x:Name="basic_img" Source="Resources/comfort1.png" Stretch="UniformToFill" Width="200" Height="110"/>
+                
+                <Label Name="basic_lb"
+                   Content="Basic " 
+                   FontFamily="Nirmala UI"
+                   FontSize="20" 
+                   FontWeight="Bold"
+                     Margin="0,-40,450,0" 
+                    Height="auto"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+                <Label Name="basic_caption_lb"
+                   Content="Cheaper UberX Rides " 
+                   FontFamily="Nirmala UI"
+                   FontSize="15" 
+                   FontWeight="Normal"
+                     Margin="0,-5,250,0" 
+                    Height="auto"
+                       Width="350"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+
+                <Label Name="basic_price_lb"
+                   Content="EGP 70.00" 
+                   FontFamily="Nirmala UI"
+                   FontSize="15" 
+                   FontWeight="Heavy"
+                     Margin="500,-50,0,0" 
+                    Height="auto"
+                       Width="100"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <Border Name="bike_border" 
+                Grid.Row="3"
+                Cursor="Hand"
+              CornerRadius="5"
+                Background="White"
+              Margin="0,0,0,2"
+                Width="635" 
+                MouseLeftButtonDown="Premium_border_MouseLeftButtonDown"
+                >
+
+
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="BorderBrush" Value="Black" />
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <StackPanel x:Name="bike_st" Grid.Row="2" >
+
+                <Image x:Name="bike_img" Source="Resources/comfort1.png" Stretch="UniformToFill" Width="200" Height="110"/>
+
+                <Label Name="bike_lb"
+                   Content="Scooter " 
+                   FontFamily="Nirmala UI"
+                   FontSize="20" 
+                   FontWeight="Bold"
+                     Margin="0,-50,450,0" 
+                    Height="auto"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+                <Label Name="bike_caption_lb"
+                   Content="Faster Rides " 
+                   FontFamily="Nirmala UI"
+                   FontSize="15" 
+                   FontWeight="Normal"
+                     Margin="0,-10,250,0" 
+                    Height="auto"
+                       Width="350"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+
+                <Label Name="bike_price_lb"
+                   Content="EGP 25.25" 
+                   FontFamily="Nirmala UI"
+                   FontSize="15" 
+                   FontWeight="Heavy"
+                     Margin="500,-50,0,0" 
+                    Height="auto"
+                       Width="100"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           Foreground="Black"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <StackPanel Grid.Row="4" >
+            <ItemsControl >
+                
+             <RadioButton x:Name="cash_rb" Content="Cash" Width="100" FontSize="15" FontFamily="Nirmala UI" IsChecked="True"  Margin="125,20,300,0" VerticalContentAlignment="Center"/>
+                <RadioButton x:Name="visa_rb" Content="Credit Card" Width="100" FontSize="15" FontFamily="Nirmala UI"  Margin="125,-19,0,0" VerticalContentAlignment="Center"/>
+            </ItemsControl>
+
+
+            <Button Name="confirm_btn"
+                
+                Width="250"
+                Height="40"
+                FontFamily="Nirmala UI"
+                Margin="-15,40,0,0"
+                Cursor="Hand"
+                BorderBrush="Blue"
+                Content="Confirm" 
+                Grid.Row="1"      
+                >
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0536FF"/>
+                                <Setter Property="Foreground" Value="white"/>
+                                <Setter Property="FontSize" Value="16" />
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Background" Value="#2662FF"/>
+                                <Setter Property="Foreground" Value="white"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>
